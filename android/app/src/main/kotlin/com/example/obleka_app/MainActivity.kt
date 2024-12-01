@@ -1,4 +1,4 @@
-package com.example.obleka_app
+package com.example.Lab1
 
 import io.flutter.embedding.android.FlutterActivity
 

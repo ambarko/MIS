@@ -1,6 +1,6 @@
 {
-    "name": "obleka_app",
-    "short_name": "obleka_app",
+    "name": "Lab1",
+    "short_name": "Lab1",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

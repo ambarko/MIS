@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "obleka_app" "\0"
+            VALUE "FileDescription", "Lab1" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "obleka_app" "\0"
+            VALUE "InternalName", "Lab1" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "obleka_app.exe" "\0"
-            VALUE "ProductName", "obleka_app" "\0"
+            VALUE "OriginalFilename", "Lab1.exe" "\0"
+            VALUE "ProductName", "Lab1" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
