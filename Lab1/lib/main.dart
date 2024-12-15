@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({super.key});
 
   final List<Item> items = [
     Item(
@@ -114,7 +114,7 @@ class HomeScreen extends StatelessWidget {
 class DetailsScreen extends StatelessWidget {
   final Item item;
 
-  const DetailsScreen({Key? key, required this.item}) : super(key: key);
+  const DetailsScreen({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
