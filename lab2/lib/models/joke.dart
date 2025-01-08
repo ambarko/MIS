@@ -3,7 +3,7 @@ class Joke {
   final String setup;
   final String punchline;
   final int id;
-  bool isFavorite;  // Додадено ново поле
+  bool isFavorite;
 
   Joke({
     required this.type,

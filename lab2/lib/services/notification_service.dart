@@ -81,15 +81,15 @@ class NotificationService {
           now.year,
           now.month,
           now.day,
-          16, // Hour (24-hour format)
-          27,  // Minute
+          16,
+          27,
         );
 
         if (now.isAfter(scheduledDate)) {
           scheduledDate = scheduledDate.add(const Duration(days: 1));
         }
 
-        // Calculate delay until scheduled time
+        
         final delay = scheduledDate.difference(now);
 
         Future.delayed(delay, () {
@@ -97,7 +97,7 @@ class NotificationService {
             body: 'Check out today\'s hilarious joke! 😄',
           );
 
-          // Reschedule for next day
+          
           scheduleJokeNotification();
         });
       }
@@ -107,8 +107,8 @@ class NotificationService {
         now.year,
         now.month,
         now.day,
-        10, // Hour (24-hour format)
-        0,  // Minute
+        10,
+        0,
       );
 
       if (now.isAfter(scheduledDate)) {
@@ -116,7 +116,7 @@ class NotificationService {
       }
 
       await notificationsPlugin.zonedSchedule(
-        0, // Notification ID
+        0,
         'Joke of the Day',
         'Check out today\'s hilarious joke! 😄',
         tz.TZDateTime.from(scheduledDate, tz.local),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../models/joke.dart';
 
-class FavoritesScreen extends StatelessWidget {  // Променето име
+class FavoritesScreen extends StatelessWidget {
   final List<Joke> favoriteJokes;
   final Function(Joke) onRemoveFavorite;
 
-  const FavoritesScreen({  // Променето име
+  const FavoritesScreen({
     Key? key,
     required this.favoriteJokes,
     required this.onRemoveFavorite,
