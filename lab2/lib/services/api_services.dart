@@ -2,35 +2,31 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/joke.dart';
 
-class ApiServices {
+class ApiService {
   static const String baseUrl = 'https://official-joke-api.appspot.com';
 
-  static Future<List<String>> fetchJokeTypes() async {
+  Future<List<String>> getJokeTypes() async {
     final response = await http.get(Uri.parse('$baseUrl/types'));
     if (response.statusCode == 200) {
-      return List<String>.from(jsonDecode(response.body));
-    } else {
-      throw Exception('Failed to load joke types');
+      return List<String>.from(json.decode(response.body));
     }
+    throw Exception('Failed to load joke types');
   }
 
-  static Future<List<Joke>> fetchJokesByType(String type) async {
+  Future<List<Joke>> getJokesByType(String type) async {
     final response = await http.get(Uri.parse('$baseUrl/jokes/$type/ten'));
     if (response.statusCode == 200) {
-      return (jsonDecode(response.body) as List)
-          .map((joke) => Joke.fromJson(joke))
-          .toList();
-    } else {
-      throw Exception('Failed to load jokes');
+      final List<dynamic> jsonData = json.decode(response.body);
+      return jsonData.map((json) => Joke.fromJson(json)).toList();
     }
+    throw Exception('Failed to load jokes');
   }
 
-  static Future<Joke> fetchRandomJoke() async {
+  Future<Joke> getRandomJoke() async {
     final response = await http.get(Uri.parse('$baseUrl/random_joke'));
     if (response.statusCode == 200) {
-      return Joke.fromJson(jsonDecode(response.body));
-    } else {
-      throw Exception('Failed to load random joke');
+      return Joke.fromJson(json.decode(response.body));
     }
+    throw Exception('Failed to load random joke');
   }
 }
